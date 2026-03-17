@@ -1,39 +1,25 @@
-# 🚀 Project Name
+# 🚀 万有引力粒子群仿真
 
-> A brief description of the project.
-> 
-> 
-> 简要说明该项目解决的问题以及主要功能。
-> 
+> 本项目为图形学课程实验环境配置与基础实践，主要内容包括：
 
----
+现代 Python 开发环境（uv）配置
 
-# 📖 Table of Contents
+Taichi 高性能计算库安装
+
+图形学项目结构（src layout）规范
+
+GPU 粒子系统仿真实现（万有引力粒子群）
 
 ---
 
 # 📌 Introduction
 
-介绍项目背景与研究目标。
-
-示例：
 
 This project focuses on **data preprocessing and analysis for station-based traffic datasets**.
 
 It provides tools to automatically convert raw `.xlsx` data into structured `.npy` datasets and supports visualization and statistical analysis.
 
-该项目主要实现：
-
-- 数据预处理
-- 批量文件处理
-- 数据可视化
-- 实验分析
-
-应用场景包括：
-
-- 数据分析
-- 科研实验
-- 机器学习数据准备
+该项目主要实现了粒子群跟随鼠标
 
 ---
 
@@ -43,60 +29,19 @@ It provides tools to automatically convert raw `.xlsx` data into structured `.np
 
 ![实验演示视频](https://github.com/Wu-Zhongxia/CG-lab/blob/main/video/N4UWoUKr_converted.gif)
 
-# ✨ Features
-
-主要特点：
-
-- ⚡ **High Efficiency** — 自动批量处理数据
-- 📊 **Visualization Support** — 数据可视化分析
-- 🔄 **Automated Pipeline** — 自动化数据处理流程
-- 🧩 **Modular Design** — 代码结构清晰
-- 📁 **Multi-file Processing** — 支持批量文件转换
-
----
-
-# 🏗 System Architecture
-
-系统整体架构：
-
-```
-Raw Data (.xlsx)
-        │
-        ▼
-Data Preprocessing
-        │
-        ▼
-Structured Dataset (.npy)
-        │
-        ▼
-Analysis / Modeling
-        │
-        ▼
-Visualization & Results
-```
-
 ---
 
 # 📂 Project Structure
 
 ```
-project-name/
-│
-├── data/                  # 原始数据
-├── processed_data/        # 处理后的数据
-│
-├── scripts/               # 数据处理脚本
-│   ├── pre.py
-│   └── all_pre.py
-│
-├── models/                # 模型代码
-├── experiments/           # 实验代码
-├── figures/               # 可视化结果
-├── results/               # 实验结果
-│
-├── main.py                # 主程序
-├── requirements.txt       # 依赖库
-└── README.md
+CG_Lab/
+├── pyproject.toml         <-- uv 自动生成的项目配置文件
+├── src/
+│   └── Work0/             <-- 实验零专属包
+│       ├── __init__.py    <-- 空文件，标识这是一个 Python 包
+│       ├── config.py      <-- 存放所有可调参数
+│       ├── physics.py     <-- 存放 GPU 并行计算与物理逻辑
+│       └── main.py        <-- 程序的入口文件，负责 GUI 渲染
 ```
 
 ---
@@ -108,7 +53,7 @@ project-name/
 推荐环境：
 
 ```
-Python >= 3.8
+Python = 3.12
 ```
 
 ## Install dependencies
@@ -141,12 +86,6 @@ data/
 python scripts/all_pre.py
 ```
 
-程序会自动：
-
-- 扫描所有 `.xlsx` 文件
-- 执行数据清洗
-- 转换为 `.npy` 文件
-
 ---
 
 ## 2 Run analysis
@@ -161,21 +100,6 @@ python main.py
 results/
 figures/
 ```
-
----
-
-# 🔄 Workflow
-
-项目运行流程：
-
-```
-1. Collect raw data
-2. Preprocess data
-3. Convert dataset format
-4. Run analysis / modeling
-5. Visualize results
-```
-
 ---
 
 # 🧪 Experiments
